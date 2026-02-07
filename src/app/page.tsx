@@ -140,7 +140,7 @@ export default function Home() {
         <section className="relative overflow-hidden">
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-28 text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#202124] leading-tight tracking-tight animate-fade-in-up">
-              The Founder Success Platform for Humanity-First Startups
+              The Founder Success Platform
             </h1>
             <p className="mt-6 text-xl text-[#5f6368] max-w-2xl mx-auto animate-fade-in-up animation-delay-100 opacity-0 [animation-fill-mode:forwards]">
               We help founders build an irrefutable brand—trusted by investors,

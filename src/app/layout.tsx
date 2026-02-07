@@ -9,7 +9,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Influenxers | The Founder Success Platform for Humanity-First Startups",
+  title: "Influenxers | The Founder Success Platform",
   description:
     "We help founders build an irrefutable brand—trusted by investors, loved by customers, and magnetic to talent.",
 };
