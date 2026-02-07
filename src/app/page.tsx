@@ -119,7 +119,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <Link
-                href="#apply"
+                href="/apply"
                 className="px-4 py-2 text-sm font-medium text-white bg-[#4285f4] hover:bg-[#3367d6] rounded-lg transition-colors"
               >
                 Apply
@@ -148,7 +148,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center animate-fade-in-up animation-delay-200 opacity-0 [animation-fill-mode:forwards]">
               <Link
-                href="#apply"
+                href="/apply"
                 className="px-6 py-3 text-sm font-medium text-white bg-[#4285f4] hover:bg-[#3367d6] rounded-lg transition-colors"
               >
                 Apply
@@ -355,7 +355,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
               <Link
-                href="#"
+                href="/apply"
                 className="px-8 py-3 text-sm font-medium text-white bg-[#4285f4] hover:bg-[#3367d6] rounded-lg transition-colors"
               >
                 Apply
