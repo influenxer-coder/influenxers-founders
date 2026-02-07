@@ -260,14 +260,15 @@ export default function ApplyPage() {
 
           <div>
             <label htmlFor="additionalInfo" className="block text-sm font-medium text-[#202124] mb-1">
-              Anything we should know about you?
+              What are you building, and for who?
             </label>
             <textarea
               id="additionalInfo"
               name="additionalInfo"
               rows={4}
+              defaultValue="We help [specific customer] achieve [specific outcome] by [how you do it], unlike [alternative]"
               className="w-full px-4 py-2.5 text-[#202124] bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4285f4] focus:border-transparent resize-none"
-              placeholder="Tell us about your startup, what you're building, and why you're applying."
+              placeholder="We help [specific customer] achieve [specific outcome] by [how you do it], unlike [alternative]"
             />
           </div>
 
