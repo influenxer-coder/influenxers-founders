@@ -14,7 +14,13 @@ export type ApplyFormData = {
 };
 
 export async function submitApplication(formData: ApplyFormData) {
-  const supabase = await createClient();
+  let supabase;
+  try {
+    supabase = await createClient();
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Supabase is not configured";
+    return { success: false, error: message };
+  }
   const {
     data: { user },
   } = await supabase.auth.getUser();

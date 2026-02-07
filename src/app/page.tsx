@@ -1,12 +1,6 @@
 import Link from "next/link";
+import { Nav } from "./components/Nav";
 import { WhoItForTabs } from "./components/WhoItForTabs";
-
-const navLinks = [
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#for-founders", label: "For Founders" },
-  { href: "#for-partners", label: "For Partners" },
-  { href: "#mission", label: "Mission" },
-];
 
 const credibility = [
   {
@@ -99,42 +93,7 @@ const testimonials = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-[#202124]">
-      {/* 1. Top Nav - Google-style minimal */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#dadce0]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
-            <Link href="#" className="text-[22px] font-normal text-[#202124] tracking-tight">
-              Influenxers
-            </Link>
-            <div className="hidden md:flex items-center gap-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-[#5f6368] hover:text-[#202124] transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-            <div className="flex items-center gap-2">
-              <Link
-                href="/apply"
-                className="px-4 py-2 text-sm font-medium text-white bg-[#4285f4] hover:bg-[#3367d6] rounded-lg transition-colors"
-              >
-                Apply
-              </Link>
-              <Link
-                href="#partner"
-                className="px-4 py-2 text-sm font-medium text-[#5f6368] hover:text-[#202124] transition-colors"
-              >
-                Partner
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+      <Nav />
       <main className="pt-14">
         {/* 2. Hero - Clean, centered, Google-style */}
         <section className="relative overflow-hidden">
@@ -371,51 +330,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Mission strip */}
-        <section id="mission" className="py-14 bg-white border-t border-[#dadce0]">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl font-normal text-[#202124]">
-              Our mission
-            </h2>
-            <p className="mt-4 text-[#5f6368]">
-              Help humanity-first founders build brands that matter—so good ideas
-              get the traction they deserve.
-            </p>
-          </div>
-        </section>
-
         {/* 11. Footer */}
         <footer className="border-t border-[#dadce0] bg-[#f8f9fa] py-12">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
               <div className="flex items-center gap-6">
-                <Link href="#" className="text-base font-medium text-[#202124]">
+                <Link href="/" className="text-base font-medium text-[#202124]">
                   Influenxers
                 </Link>
                 <div className="flex gap-6">
                   <Link
-                    href="#how-it-works"
+                    href="/mission"
+                    className="text-sm text-[#5f6368] hover:text-[#202124]"
+                  >
+                    Mission
+                  </Link>
+                  <Link
+                    href="/#how-it-works"
                     className="text-sm text-[#5f6368] hover:text-[#202124]"
                   >
                     How it works
                   </Link>
                   <Link
-                    href="#for-founders"
+                    href="/#for-founders"
                     className="text-sm text-[#5f6368] hover:text-[#202124]"
                   >
                     For Founders
                   </Link>
                   <Link
-                    href="#for-partners"
+                    href="/#for-partners"
                     className="text-sm text-[#5f6368] hover:text-[#202124]"
                   >
                     For Partners
-                  </Link>
-                  <Link
-                    href="#mission"
-                    className="text-sm text-[#5f6368] hover:text-[#202124]"
-                  >
-                    Mission
                   </Link>
                 </div>
               </div>
