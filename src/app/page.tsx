@@ -35,6 +35,34 @@ const credibility = [
   },
 ];
 
+const campaigns = [
+  {
+    title: "Retain customers",
+    subhead: "Tell stories to customers",
+    copy: "Create and post content across channels to drive demand and loyalty.",
+  },
+  {
+    title: "Retain investors",
+    subhead: "Investor pitches that hold up",
+    copy: "Narrative and proof that makes the opportunity obvious.",
+  },
+  {
+    title: "Retain employees",
+    subhead: "Attract the right people",
+    copy: "Mission becomes a magnet. Recruiting content that resonates.",
+  },
+];
+
+const howItWorksSteps = [
+  { step: 1, title: "Apply", detail: "Tell us about your startup and what you're building." },
+  { step: 2, title: "We review", detail: "We check your background and ideas to see if we can help." },
+  { step: 3, title: "You're in", detail: "If it's a fit, we accept your signup and set up an intro call." },
+  { step: 4, title: "Intro call with an expert", detail: "We collect everything we need to create your best brand narrative." },
+  { step: 5, title: "Upload your info", detail: "Once all information is in, we'll notify you on the next step." },
+  { step: 6, title: "Choose your first campaign", detail: "Retain customers, retain employees, or retain investors. Pick one objective so we optimize for it." },
+  { step: 7, title: "We run the campaign", detail: "We generate content and post across your accounts and the web to drive leads for your chosen outcome." },
+];
+
 const problemCards = [
   {
     title: "Clarity",
@@ -48,44 +76,6 @@ const problemCards = [
     title: "Momentum",
     copy: "Without a story that spreads, growth stalls.",
   },
-];
-
-const whatWeDoColumns = [
-  {
-    title: "Customers",
-    subhead: "Translate solution → demand",
-    bullets: [
-      "Positioning that resonates with who you serve",
-      "Messaging that converts curiosity into action",
-      "Content that builds trust before the sale",
-    ],
-  },
-  {
-    title: "Investors",
-    subhead: "Story + proof that holds up",
-    bullets: [
-      "Narrative that makes the opportunity obvious",
-      "Proof framing that answers the hardest questions",
-      "Deck, memo, and pitch that align",
-    ],
-  },
-  {
-    title: "Employees & Partners",
-    subhead: "Mission becomes a magnet",
-    bullets: [
-      "Recruiting materials that attract the right people",
-      "Culture and values that show up in every touchpoint",
-      "Partnership positioning that creates alignment",
-    ],
-  },
-];
-
-const howItWorksSteps = [
-  { step: 1, title: "Intent check", detail: "Humanity-first" },
-  { step: 2, title: "Problem clarity", detail: "" },
-  { step: 3, title: "Proof & traction", detail: "" },
-  { step: 4, title: "Story system", detail: "Deck, website, recruiting, content" },
-  { step: 5, title: "Distribution loops", detail: "Repeatable" },
 ];
 
 const testimonials = [
@@ -174,6 +164,9 @@ export default function Home() {
             <p className="mt-10 text-sm text-zinc-500 italic animate-fade-in-up animation-delay-300 opacity-0 [animation-fill-mode:forwards]">
               Only one rule: it must serve humanity.
             </p>
+            <p className="mt-6 text-sm text-zinc-600 animate-fade-in-up animation-delay-300 opacity-0 [animation-fill-mode:forwards]">
+              Free to use. Pay only per campaign you run.
+            </p>
           </div>
         </section>
 
@@ -220,29 +213,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. What We Do */}
+        {/* 5. Campaigns - What We Do */}
         <section className="py-20 sm:py-28 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900">
-              Influenxers builds your Founder Brand Engine
+              Run campaigns for the outcomes that matter
             </h2>
+            <p className="mt-4 text-zinc-600 max-w-2xl">
+              Choose one objective per campaign so we can optimize for it. Pay only for the campaigns you run.
+            </p>
             <div className="mt-16 grid sm:grid-cols-3 gap-8">
-              {whatWeDoColumns.map((col, i) => (
-                <div key={i} className="space-y-4">
+              {campaigns.map((col, i) => (
+                <div key={i} className="p-6 rounded-xl border border-zinc-100 bg-zinc-50/50 hover:border-teal-200 transition-colors">
                   <h3 className="text-lg font-semibold text-zinc-900">
                     {col.title}
                   </h3>
-                  <p className="text-sm text-teal-600 font-medium">
+                  <p className="mt-1 text-sm text-teal-600 font-medium">
                     {col.subhead}
                   </p>
-                  <ul className="space-y-2">
-                    {col.bullets.map((bullet, j) => (
-                      <li key={j} className="flex gap-2 text-zinc-600 text-sm">
-                        <span className="text-teal-500">•</span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="mt-4 text-zinc-600 text-sm">
+                    {col.copy}
+                  </p>
                 </div>
               ))}
             </div>
@@ -255,6 +246,9 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900">
               How it works
             </h2>
+            <p className="mt-4 text-zinc-600">
+              Apply. We review. If we can help, we get you set up. Then you run campaigns for the outcomes you care about.
+            </p>
             <div className="mt-12 space-y-4">
               {howItWorksSteps.map((item, i) => (
                 <div
