@@ -243,7 +243,7 @@ export default function ApplyPage() {
 
           <div>
             <label htmlFor="mainGoal" className="block text-sm font-medium text-[#202124] mb-1">
-              Main goal *
+              Your next milestone *
             </label>
             <select
               id="mainGoal"
@@ -251,10 +251,10 @@ export default function ApplyPage() {
               required
               className="w-full px-4 py-2.5 text-[#202124] bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4285f4] focus:border-transparent"
             >
-              <option value="">Select your primary objective</option>
-              <option value="retain-customers">Retain customers</option>
-              <option value="retain-investors">Retain investors</option>
-              <option value="retain-employees">Retain employees</option>
+              <option value="">Select</option>
+              <option value="fund-raising">Fund raising</option>
+              <option value="grow-customers">Grow customers</option>
+              <option value="grow-team">Grow team</option>
             </select>
           </div>
 
