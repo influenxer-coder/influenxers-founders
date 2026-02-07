@@ -15,9 +15,15 @@ export default function MissionPage() {
         <section className="py-24 sm:py-32">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl sm:text-5xl font-normal text-[#202124]">
-              Our mission
+              Great ideas don&apos;t fail because founders aren&apos;t smart.
             </h1>
-            <p className="mt-8 text-xl text-[#5f6368] leading-relaxed">
+            <p className="mt-6 text-xl text-[#5f6368] leading-relaxed">
+              Dreams die because the world doesn&apos;t clearly understand value, proof, or why now.
+            </p>
+            <h2 className="mt-16 text-2xl font-normal text-[#202124]">
+              Our mission
+            </h2>
+            <p className="mt-6 text-xl text-[#5f6368] leading-relaxed">
               Help humanity-first founders build brands that matter—so good ideas
               get the traction they deserve.
             </p>
