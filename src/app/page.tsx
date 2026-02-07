@@ -352,7 +352,7 @@ export default function Home() {
                     How it works
                   </Link>
                   <Link
-                    href="/#for-founders"
+                    href="/for-founders"
                     className="text-sm text-[#5f6368] hover:text-[#202124]"
                   >
                     For Founders
