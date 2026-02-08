@@ -16,10 +16,10 @@ function PayingCustomerTicker() {
   return (
     <div className="flex items-center justify-between border-y border-[#1F1F1F] px-6 py-4 md:px-10">
       <span className="font-mono text-xs text-[#6B6B6B]">
-        PAYING_CUSTOMERS_MRR
+        monthly paying customers
       </span>
       <span className="font-mono tabular-nums text-xl md:text-2xl text-[#EDEDED]">
-        ${mrr.toLocaleString()}/mo
+        {mrr.toLocaleString()}
       </span>
       <span className="rounded border border-[#00FF84] px-2 py-0.5 font-mono text-xs text-[#00FF84]">
         LIVE
@@ -71,7 +71,8 @@ export default function Home() {
 
           {/* 2. HERO */}
           <section className="py-16 md:py-20">
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+            <PayingCustomerTicker />
+            <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div>
                 <div className="mb-6 inline-block rounded-full border border-[#1F1F1F] bg-[#0B0B0B] px-3 py-1 font-mono text-xs text-[#6B6B6B]">
                   FOUNDERS • GROWTH • STORY OPS
@@ -191,9 +192,6 @@ export default function Home() {
             </div>
           </section>
         </div>
-
-        {/* 3. PAYING CUSTOMER TICKER */}
-        <PayingCustomerTicker />
 
         <div className="mx-auto max-w-[1120px] px-6 md:px-10">
           {/* 4. FEATURES */}
