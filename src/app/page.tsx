@@ -71,7 +71,7 @@ export default function Home() {
                 href="/apply"
                 className="rounded-[10px] border border-[#1F1F1F] px-4 py-2 font-mono text-sm text-[#EDEDED] hover:border-[#1F1F1F] hover:bg-[#0F0F0F] transition-colors"
               >
-                Start writing
+                Start influencing
               </Link>
             </div>
           </nav>
@@ -96,7 +96,7 @@ export default function Home() {
                     href="/apply"
                     className="rounded-[10px] bg-[#00FF84] px-6 py-3 font-medium text-[#050505] transition-all hover:-translate-y-0.5 hover:brightness-110"
                   >
-                    Start writing
+                    Start influencing
                   </Link>
                   <Link
                     href="#how-it-works"
@@ -386,7 +386,7 @@ export default function Home() {
                 href="/apply"
                 className="rounded-[10px] bg-[#00FF84] px-6 py-3 font-medium text-[#050505] transition-all hover:-translate-y-0.5 hover:brightness-110"
               >
-                Start writing
+                Start influencing
               </Link>
               <Link
                 href="#"
