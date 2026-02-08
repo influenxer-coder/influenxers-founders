@@ -3,27 +3,34 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-function PayingCustomerTicker() {
-  const [mrr, setMrr] = useState(10000);
+function PayingCustomerTerminal() {
+  const [count, setCount] = useState(10100);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setMrr((prev) => (prev >= 10999 ? 10000 : prev + 1));
+      setCount((prev) => (prev >= 10999 ? 10000 : prev + 1));
     }, 900);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="flex items-center justify-between border-y border-[#1F1F1F] px-6 py-4 md:px-10">
-      <span className="font-mono text-xs text-[#6B6B6B]">
-        monthly paying customers
-      </span>
-      <span className="font-mono tabular-nums text-xl md:text-2xl text-[#EDEDED]">
-        {mrr.toLocaleString()}
-      </span>
-      <span className="rounded border border-[#00FF84] px-2 py-0.5 font-mono text-xs text-[#00FF84]">
-        LIVE
-      </span>
+    <div className="overflow-hidden rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] shadow-none transition-shadow hover:shadow-[0_0_0_1px_rgba(0,255,132,0.2),0_0_30px_rgba(0,255,132,0.08)]">
+      {/* Top bar */}
+      <div className="flex items-center gap-2 border-b border-[#1F1F1F] px-4 py-3">
+        <span className="h-2.5 w-2.5 rounded-full bg-[#8A2C2C]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#8A7A2C]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#2C8A52]" />
+      </div>
+      {/* Content */}
+      <div className="p-6 font-mono">
+        <p className="text-xs text-[#6B6B6B]">monthly paying customers</p>
+        <p className="mt-4 tabular-nums text-3xl font-medium text-[#EDEDED]">
+          {count.toLocaleString()}
+        </p>
+        <span className="mt-4 inline-block rounded border border-[#00FF84] px-2 py-0.5 text-xs text-[#00FF84]">
+          LIVE
+        </span>
+      </div>
     </div>
   );
 }
@@ -71,8 +78,7 @@ export default function Home() {
 
           {/* 2. HERO */}
           <section className="py-16 md:py-20">
-            <PayingCustomerTicker />
-            <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div>
                 <div className="mb-6 inline-block rounded-full border border-[#1F1F1F] bg-[#0B0B0B] px-3 py-1 font-mono text-xs text-[#6B6B6B]">
                   FOUNDERS • GROWTH • STORY OPS
@@ -103,92 +109,7 @@ export default function Home() {
                   Built for founders. Used by growth teams.
                 </p>
               </div>
-
-              {/* Editor Preview Card */}
-              <div className="overflow-hidden rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] shadow-none transition-shadow hover:shadow-[0_0_0_1px_rgba(0,255,132,0.2),0_0_30px_rgba(0,255,132,0.08)]">
-                {/* Top bar */}
-                <div className="flex items-center justify-between border-b border-[#1F1F1F] px-4 py-3">
-                  <div className="flex gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#8A2C2C]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#8A7A2C]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#2C8A52]" />
-                  </div>
-                  <span className="font-mono text-xs text-[#A3A3A3]">
-                    InfluenXers / Narrative OS
-                  </span>
-                  <div className="w-14" />
-                </div>
-
-                {/* Two-pane layout */}
-                <div className="flex min-h-[280px]">
-                  {/* Left rail */}
-                  <div className="w-32 border-r border-[#1F1F1F] py-3">
-                    {["Inbox", "Narrative", "Story Bank", "Posts", "Ship"].map(
-                      (item, i) => (
-                        <div
-                          key={item}
-                          className={`flex items-center gap-2 px-3 py-2 font-mono text-xs ${
-                            i === 1
-                              ? "border-l-2 border-[#00FF84] bg-[#0F0F0F] text-[#EDEDED]"
-                              : "text-[#6B6B6B]"
-                          }`}
-                        >
-                          {item}
-                        </div>
-                      )
-                    )}
-                  </div>
-
-                  {/* Main panel */}
-                  <div className="flex-1">
-                    {/* Tabs */}
-                    <div className="flex border-b border-[#1F1F1F] px-4">
-                      {["Narrative.md", "Investor.md", "Customer.md"].map(
-                        (tab, i) => (
-                          <div
-                            key={tab}
-                            className={`border-b-2 px-4 py-2 font-mono text-xs ${
-                              i === 0
-                                ? "border-[#00FF84] text-[#EDEDED]"
-                                : "border-transparent text-[#6B6B6B]"
-                            }`}
-                          >
-                            {tab}
-                          </div>
-                        )
-                      )}
-                    </div>
-
-                    {/* Content area */}
-                    <div className="p-4 font-mono text-xs">
-                      <div className="flex items-start gap-2">
-                        <span className="text-[#6B6B6B]">&gt;</span>
-                        <div className="flex-1">
-                          <span className="text-[#A3A3A3]">
-                            /generate investor story from last 30 days traction
-                          </span>
-                          <span className="cursor-blink ml-0.5 inline-block h-3 w-0.5 bg-[#00FF84]" />
-                        </div>
-                      </div>
-                      <div className="mt-4 space-y-1 pl-4 text-[#6B6B6B]">
-                        <div>→ Hook: why now</div>
-                        <div>→ Proof: customer pull</div>
-                        <div>→ Narrative: inevitable future</div>
-                        <div>→ CTA: book a demo / join waitlist</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Status bar */}
-                <div className="flex items-center justify-between border-t border-[#1F1F1F] px-4 py-1.5 font-mono text-[10px] text-[#6B6B6B]">
-                  <span>MODEL: InfluenXers v1</span>
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#2C8A52]" />
-                    <span>STATUS: READY</span>
-                  </div>
-                </div>
-              </div>
+              <PayingCustomerTerminal />
             </div>
           </section>
         </div>
@@ -382,34 +303,71 @@ export default function Home() {
             </h2>
             <div className="mt-12 grid gap-8 md:grid-cols-2">
               <div className="card-hover flex gap-6 rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#0F0F0F] font-mono text-sm text-[#A3A3A3]">
-                  HP
-                </div>
+                <a
+                  href="https://www.linkedin.com/in/harshpamnani/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0"
+                >
+                  <img
+                    src="https://ui-avatars.com/api/?name=Harsh+Pamnani&size=112&background=0F0F0F&color=A3A3A3"
+                    alt="Harsh Pamnani"
+                    className="h-14 w-14 rounded-full border border-[#1F1F1F] object-cover"
+                  />
+                </a>
                 <div>
                   <h3 className="font-medium text-[#EDEDED]">Harsh Pamnani</h3>
                   <p className="mt-1 font-mono text-xs text-[#6B6B6B]">
-                    Brand builder. Author of multiple brand-building books.
+                    Marketing Head at T-Hub. Best-selling author of 4 books on
+                    branding. 100+ articles in Forbes, ET, FE. 7x TEDx speaker.
+                    Visiting Faculty at IIMs & MICA. MBA from XLRI.
                   </p>
                   <p className="mt-3 text-sm text-[#A3A3A3] leading-relaxed">
-                    Studied how founders and startups skyrocket their brands — and
+                    Marketer with deep experience crafting brand narratives that
+                    build trust. Studied how founders skyrocket their brands — and
                     turned it into a system.
                   </p>
+                  <a
+                    href="https://www.linkedin.com/in/harshpamnani/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block font-mono text-xs text-[#00FF84] hover:underline"
+                  >
+                    LinkedIn →
+                  </a>
                 </div>
               </div>
               <div className="card-hover flex gap-6 rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#0F0F0F] font-mono text-sm text-[#A3A3A3]">
-                  AL
-                </div>
+                <a
+                  href="https://www.linkedin.com/in/amritashwar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0"
+                >
+                  <img
+                    src="https://ui-avatars.com/api/?name=Amritashwar+Lal&size=112&background=0F0F0F&color=A3A3A3"
+                    alt="Amritashwar Lal"
+                    className="h-14 w-14 rounded-full border border-[#1F1F1F] object-cover"
+                  />
+                </a>
                 <div>
                   <h3 className="font-medium text-[#EDEDED]">Amritashwar Lal</h3>
                   <p className="mt-1 font-mono text-xs text-[#6B6B6B]">
-                    Performance marketing product builder across Instagram,
-                    Tapestry, and Snap.
+                    Product Lead @ Snapchat Brand & AR Ads. Ex-Instagram Reels
+                    Monetization. Ex-Tapestry AI, Apple Maps, Yahoo. CMU Tepper MBA.
                   </p>
                   <p className="mt-3 text-sm text-[#A3A3A3] leading-relaxed">
-                    Built products that helped the world's best brands grow — now
-                    applying that playbook to founders.
+                    Built Instagram Reels advertising and products for Fortune 500
+                    brands. Now applying that playbook to help founders grow.
                   </p>
+                  <a
+                    href="https://www.linkedin.com/in/amritashwar/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block font-mono text-xs text-[#00FF84] hover:underline"
+                  >
+                    LinkedIn →
+                  </a>
                 </div>
               </div>
             </div>
