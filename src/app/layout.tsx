@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "Influenxers | The Founder Success Platform",
+  title: "InfluenXers | Turn your startup into an influencing machine",
   description:
-    "We help founders build an irrefutable brand—trusted by investors, loved by customers, and magnetic to talent.",
+    "InfluenXers helps founders and growth teams craft stories that move customers and investors — then turns those stories into high-performing content, weekly.",
 };
 
 export default function RootLayout({
@@ -21,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

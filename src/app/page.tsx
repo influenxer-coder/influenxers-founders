@@ -1,383 +1,476 @@
+"use client";
+
 import Link from "next/link";
-import { Nav } from "./components/Nav";
-import { WhoItForTabs } from "./components/WhoItForTabs";
+import { useEffect, useState } from "react";
 
-const credibility = [
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    label: "Narrative clarity",
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    label: "Proof-first positioning",
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    label: "Distribution loops",
-  },
-];
+function PayingCustomerTicker() {
+  const [mrr, setMrr] = useState(10000);
 
-const campaigns = [
-  {
-    title: "Retain customers",
-    subhead: "Tell stories to customers",
-    copy: "Create and post content across channels to drive demand and loyalty.",
-  },
-  {
-    title: "Retain investors",
-    subhead: "Investor pitches that hold up",
-    copy: "Narrative and proof that makes the opportunity obvious.",
-  },
-  {
-    title: "Retain employees",
-    subhead: "Attract the right people",
-    copy: "Mission becomes a magnet. Recruiting content that resonates.",
-  },
-];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMrr((prev) => (prev >= 10999 ? 10000 : prev + 1));
+    }, 900);
+    return () => clearInterval(interval);
+  }, []);
 
-const howItWorksSteps = [
-  { step: 1, title: "Apply", detail: "Tell us about your startup and what you're building." },
-  { step: 2, title: "We review", detail: "We check your background and ideas to see if we can help." },
-  { step: 3, title: "You're in", detail: "If it's a fit, we accept your signup and set up an intro call." },
-  { step: 4, title: "Intro call with an expert", detail: "We collect everything we need to create your best brand narrative." },
-  { step: 5, title: "Upload your info", detail: "Once all information is in, we'll notify you on the next step." },
-  { step: 6, title: "Choose your first campaign", detail: "Retain customers, retain employees, or retain investors. Pick one objective so we optimize for it." },
-  { step: 7, title: "We run the campaign", detail: "We generate content and post across your accounts and the web to drive leads for your chosen outcome." },
-];
-
-const problemCards = [
-  {
-    title: "Clarity",
-    copy: "The world doesn't understand what you do or why it matters.",
-  },
-  {
-    title: "Trust",
-    copy: "Proof gets lost in the noise. Investors and customers need to see it clearly.",
-  },
-  {
-    title: "Momentum",
-    copy: "Without a story that spreads, growth stalls.",
-  },
-];
-
-const testimonials = [
-  {
-    quote: "Finally, a system that makes our story tangible. Our last raise felt completely different.",
-    name: "Sarah Chen",
-    role: "Founder, EdTech startup",
-  },
-  {
-    quote: "We went from 'what do you do again?' to term sheets. The clarity piece was the unlock.",
-    name: "Marcus Okonkwo",
-    role: "CEO, Climate tech",
-  },
-  {
-    quote: "As an agency, this gave us a framework we can repeat. Our clients see the difference.",
-    name: "Elena Vasquez",
-    role: "Managing Partner, Brand studio",
-  },
-];
+  return (
+    <div className="flex items-center justify-between border-y border-[#1F1F1F] px-6 py-4 md:px-10">
+      <span className="font-mono text-xs text-[#6B6B6B]">
+        PAYING_CUSTOMERS_MRR
+      </span>
+      <span className="font-mono tabular-nums text-xl md:text-2xl text-[#EDEDED]">
+        ${mrr.toLocaleString()}/mo
+      </span>
+      <span className="rounded border border-[#00FF84] px-2 py-0.5 font-mono text-xs text-[#00FF84]">
+        LIVE
+      </span>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-[#202124]">
-      <Nav />
-      <main className="pt-14">
-        {/* 2. Hero - Clean, centered, Google-style */}
-        <section className="relative overflow-hidden">
-          <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-28 text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#202124] leading-tight tracking-tight animate-fade-in-up">
-              The Founder Success Platform
-            </h1>
-            <p className="mt-6 text-xl text-[#5f6368] max-w-2xl mx-auto animate-fade-in-up animation-delay-100 opacity-0 [animation-fill-mode:forwards]">
-              We help founders build an irrefutable brand—trusted by investors,
-              loved by customers, and magnetic to talent.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4 justify-center animate-fade-in-up animation-delay-200 opacity-0 [animation-fill-mode:forwards]">
+    <div className="page-grid min-h-screen bg-[#050505]">
+      <div className="hero-vignette">
+        <div className="mx-auto max-w-[1120px] px-6 md:px-10">
+          {/* 1. TOP NAV */}
+          <nav className="sticky top-0 z-50 flex h-14 items-center justify-between border-b border-[#1F1F1F] bg-[#050505]/90 backdrop-blur-sm">
+            <Link
+              href="/"
+              className="font-mono text-sm font-medium text-[#EDEDED]"
+            >
+              InfluenXers
+            </Link>
+            <div className="flex items-center gap-6">
               <Link
-                href="/apply"
-                className="px-6 py-3 text-sm font-medium text-white bg-[#4285f4] hover:bg-[#3367d6] rounded-lg transition-colors"
+                href="#"
+                className="font-mono text-sm text-[#A3A3A3] hover:text-[#00FF84] transition-colors"
               >
-                Apply
+                Docs
               </Link>
               <Link
-                href="#partner"
-                className="px-6 py-3 text-sm font-medium text-[#5f6368] hover:text-[#202124] border border-[#dadce0] hover:border-[#5f6368] rounded-lg transition-colors"
+                href="#pricing"
+                className="font-mono text-sm text-[#A3A3A3] hover:text-[#00FF84] transition-colors"
               >
-                Become a Partner
-              </Link>
-            </div>
-            <p className="mt-12 text-sm text-[#5f6368] animate-fade-in-up animation-delay-300 opacity-0 [animation-fill-mode:forwards]">
-              Only one rule: it must serve humanity.
-            </p>
-            <p className="mt-2 text-sm text-[#5f6368] animate-fade-in-up animation-delay-300 opacity-0 [animation-fill-mode:forwards]">
-              Free to use. Pay only per campaign you run.
-            </p>
-          </div>
-        </section>
-
-        {/* 3. Credibility Strip - Minimal */}
-        <section className="bg-[#f8f9fa] border-y border-[#dadce0]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 justify-center items-center">
-              {credibility.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 text-[#5f6368]"
-                >
-                  <span className="text-[#4285f4]">{item.icon}</span>
-                  <span className="font-medium text-[#202124]">{item.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 4. Problem Section */}
-        <section id="for-founders" className="py-20 sm:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-normal text-[#202124] max-w-2xl">
-              Great ideas don&apos;t fail because founders aren&apos;t smart.
-            </h2>
-            <p className="mt-4 text-lg text-[#5f6368] max-w-2xl">
-              Dreams die because the world doesn&apos;t clearly understand value,
-              proof, or why now.
-            </p>
-            <div className="mt-16 grid sm:grid-cols-3 gap-6">
-              {problemCards.map((card, i) => (
-                <div
-                  key={i}
-                  className="p-6 bg-white rounded-lg border border-[#dadce0] hover:border-[#4285f4]/30 transition-colors"
-                >
-                  <h3 className="text-base font-medium text-[#202124]">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 text-[#5f6368] text-[15px] leading-relaxed">{card.copy}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Campaigns */}
-        <section className="py-20 sm:py-24 bg-[#f8f9fa]">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-normal text-[#202124]">
-              Run campaigns for the outcomes that matter
-            </h2>
-            <p className="mt-4 text-[#5f6368] max-w-2xl">
-              Choose one objective per campaign so we can optimize for it. Pay only for the campaigns you run.
-            </p>
-            <div className="mt-16 grid sm:grid-cols-3 gap-6">
-              {campaigns.map((col, i) => (
-                <div key={i} className="p-6 rounded-lg bg-white border border-[#dadce0] hover:border-[#4285f4]/30 transition-colors">
-                  <h3 className="text-base font-medium text-[#202124]">
-                    {col.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-[#4285f4] font-medium">
-                    {col.subhead}
-                  </p>
-                  <p className="mt-4 text-[#5f6368] text-[15px] leading-relaxed">
-                    {col.copy}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 6. How It Works */}
-        <section id="how-it-works" className="py-20 sm:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-normal text-[#202124]">
-              How it works
-            </h2>
-            <p className="mt-4 text-[#5f6368]">
-              Apply. We review. If we can help, we get you set up. Then you run campaigns for the outcomes you care about.
-            </p>
-            <div className="mt-14 space-y-1">
-              {howItWorksSteps.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-5 py-4 border-b border-[#dadce0] last:border-0 hover:bg-[#f8f9fa]/50 rounded-lg transition-colors -mx-2 px-6"
-                >
-                  <span className="shrink-0 w-8 h-8 rounded-full bg-[#4285f4]/10 text-[#4285f4] font-medium flex items-center justify-center text-sm">
-                    {item.step}
-                  </span>
-                  <div>
-                    <h3 className="font-medium text-[#202124]">
-                      {item.title}
-                    </h3>
-                    {item.detail && (
-                      <p className="text-sm text-[#5f6368] mt-0.5">
-                        {item.detail}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 7. Phase 1 vs Phase 2 */}
-        <section className="py-20 sm:py-24 bg-[#f8f9fa]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-normal text-[#202124] mb-14">
-              Where we are
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="p-6 rounded-lg bg-white border-2 border-[#4285f4]">
-                <span className="text-xs font-medium text-[#4285f4] uppercase tracking-wider">
-                  Phase 1
-                </span>
-                <h3 className="mt-2 text-lg font-medium text-[#202124]">
-                  Agency-powered founder success
-                </h3>
-                <p className="mt-3 text-[#5f6368] text-[15px] leading-relaxed">
-                  Hands-on work with founders and agency partners. Narrative,
-                  positioning, deck, and story system. We&apos;re doing it now.
-                </p>
-              </div>
-              <div className="p-6 rounded-lg bg-white border border-[#dadce0]">
-                <span className="text-xs font-medium text-[#5f6368] uppercase tracking-wider">
-                  Phase 2
-                </span>
-                <h3 className="mt-2 text-lg font-medium text-[#202124]">
-                  Agentic platform
-                </h3>
-                <p className="mt-3 text-[#5f6368] text-[15px] leading-relaxed">
-                  The same system, scaled. Tools and workflows that help founders
-                  and partners move faster. Building toward it.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 8. Who It's For */}
-        <section id="for-partners" className="py-20 sm:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-normal text-[#202124] text-center mb-2">
-              Who it&apos;s for
-            </h2>
-            <p className="text-[#5f6368] text-center mb-14">
-              Two paths. Same mission.
-            </p>
-            <WhoItForTabs />
-          </div>
-        </section>
-
-        {/* 9. Testimonials */}
-        <section className="py-20 sm:py-24 bg-[#f8f9fa]">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-normal text-[#202124] text-center mb-14">
-              What founders and partners say
-            </h2>
-            <div className="grid sm:grid-cols-3 gap-6">
-              {testimonials.map((t, i) => (
-                <div
-                  key={i}
-                  className="p-6 bg-white rounded-lg border border-[#dadce0]"
-                >
-                  <p className="text-[#5f6368] text-[15px] leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="mt-4">
-                    <p className="font-medium text-[#202124]">{t.name}</p>
-                    <p className="text-sm text-[#5f6368]">{t.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 10. Final CTA */}
-        <section id="apply" className="py-24 sm:py-32">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-normal text-[#202124]">
-              If you&apos;re building to serve, you&apos;re not alone.
-            </h2>
-            <p className="mt-4 text-[#5f6368]">
-              Join founders and partners who put humanity first.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/apply"
-                className="px-8 py-3 text-sm font-medium text-white bg-[#4285f4] hover:bg-[#3367d6] rounded-lg transition-colors"
-              >
-                Apply
+                Pricing
               </Link>
               <Link
                 href="#"
-                id="partner"
-                className="px-8 py-3 text-sm font-medium text-[#5f6368] hover:text-[#202124] border border-[#dadce0] hover:border-[#5f6368] rounded-lg transition-colors"
+                className="font-mono text-sm text-[#A3A3A3] hover:text-[#00FF84] transition-colors"
               >
-                Become a Partner
+                Login
+              </Link>
+              <Link
+                href="/apply"
+                className="rounded-[10px] border border-[#1F1F1F] px-4 py-2 font-mono text-sm text-[#EDEDED] hover:border-[#1F1F1F] hover:bg-[#0F0F0F] transition-colors"
+              >
+                Start writing
               </Link>
             </div>
-          </div>
-        </section>
+          </nav>
 
-        {/* 11. Footer */}
-        <footer className="border-t border-[#dadce0] bg-[#f8f9fa] py-12">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-              <div className="flex items-center gap-6">
-                <Link href="/" className="text-base font-medium text-[#202124]">
-                  Influenxers
-                </Link>
-                <div className="flex gap-6">
+          {/* 2. HERO */}
+          <section className="py-16 md:py-20">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+              <div>
+                <div className="mb-6 inline-block rounded-full border border-[#1F1F1F] bg-[#0B0B0B] px-3 py-1 font-mono text-xs text-[#6B6B6B]">
+                  FOUNDERS • GROWTH • STORY OPS
+                </div>
+                <h1 className="text-3xl font-medium leading-tight text-[#EDEDED] md:text-4xl">
+                  Turn your startup into an influencing machine.
+                </h1>
+                <p className="mt-6 text-[#A3A3A3] leading-relaxed">
+                  InfluenXers helps founders and growth teams craft stories that
+                  move customers and investors — then turns those stories into
+                  high-performing content, weekly.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-4">
                   <Link
-                    href="/mission"
-                    className="text-sm text-[#5f6368] hover:text-[#202124]"
+                    href="/apply"
+                    className="rounded-[10px] bg-[#00FF84] px-6 py-3 font-medium text-[#050505] transition-all hover:-translate-y-0.5 hover:brightness-110"
                   >
-                    Mission
+                    Start writing
                   </Link>
                   <Link
-                    href="/#how-it-works"
-                    className="text-sm text-[#5f6368] hover:text-[#202124]"
+                    href="#how-it-works"
+                    className="rounded-[10px] border border-[#1F1F1F] px-6 py-3 font-medium text-[#EDEDED] transition-all hover:-translate-y-0.5 hover:border-[#1F1F1F] hover:bg-[#0F0F0F]"
                   >
-                    How it works
-                  </Link>
-                  <Link
-                    href="/for-founders"
-                    className="text-sm text-[#5f6368] hover:text-[#202124]"
-                  >
-                    For Founders
-                  </Link>
-                  <Link
-                    href="/#for-partners"
-                    className="text-sm text-[#5f6368] hover:text-[#202124]"
-                  >
-                    For Partners
+                    See how it works
                   </Link>
                 </div>
+                <p className="mt-6 font-mono text-xs text-[#6B6B6B]">
+                  Built for founders. Used by growth teams.
+                </p>
               </div>
-              <a
-                href="mailto:hello@influenxers.com"
-                className="text-sm text-[#5f6368] hover:text-[#202124]"
-              >
-                hello@influenxers.com
-              </a>
+
+              {/* Editor Preview Card */}
+              <div className="overflow-hidden rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] shadow-none transition-shadow hover:shadow-[0_0_0_1px_rgba(0,255,132,0.2),0_0_30px_rgba(0,255,132,0.08)]">
+                {/* Top bar */}
+                <div className="flex items-center justify-between border-b border-[#1F1F1F] px-4 py-3">
+                  <div className="flex gap-2">
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#8A2C2C]" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#8A7A2C]" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#2C8A52]" />
+                  </div>
+                  <span className="font-mono text-xs text-[#A3A3A3]">
+                    InfluenXers / Narrative OS
+                  </span>
+                  <div className="w-14" />
+                </div>
+
+                {/* Two-pane layout */}
+                <div className="flex min-h-[280px]">
+                  {/* Left rail */}
+                  <div className="w-32 border-r border-[#1F1F1F] py-3">
+                    {["Inbox", "Narrative", "Story Bank", "Posts", "Ship"].map(
+                      (item, i) => (
+                        <div
+                          key={item}
+                          className={`flex items-center gap-2 px-3 py-2 font-mono text-xs ${
+                            i === 1
+                              ? "border-l-2 border-[#00FF84] bg-[#0F0F0F] text-[#EDEDED]"
+                              : "text-[#6B6B6B]"
+                          }`}
+                        >
+                          {item}
+                        </div>
+                      )
+                    )}
+                  </div>
+
+                  {/* Main panel */}
+                  <div className="flex-1">
+                    {/* Tabs */}
+                    <div className="flex border-b border-[#1F1F1F] px-4">
+                      {["Narrative.md", "Investor.md", "Customer.md"].map(
+                        (tab, i) => (
+                          <div
+                            key={tab}
+                            className={`border-b-2 px-4 py-2 font-mono text-xs ${
+                              i === 0
+                                ? "border-[#00FF84] text-[#EDEDED]"
+                                : "border-transparent text-[#6B6B6B]"
+                            }`}
+                          >
+                            {tab}
+                          </div>
+                        )
+                      )}
+                    </div>
+
+                    {/* Content area */}
+                    <div className="p-4 font-mono text-xs">
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#6B6B6B]">&gt;</span>
+                        <div className="flex-1">
+                          <span className="text-[#A3A3A3]">
+                            /generate investor story from last 30 days traction
+                          </span>
+                          <span className="cursor-blink ml-0.5 inline-block h-3 w-0.5 bg-[#00FF84]" />
+                        </div>
+                      </div>
+                      <div className="mt-4 space-y-1 pl-4 text-[#6B6B6B]">
+                        <div>→ Hook: why now</div>
+                        <div>→ Proof: customer pull</div>
+                        <div>→ Narrative: inevitable future</div>
+                        <div>→ CTA: book a demo / join waitlist</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Status bar */}
+                <div className="flex items-center justify-between border-t border-[#1F1F1F] px-4 py-1.5 font-mono text-[10px] text-[#6B6B6B]">
+                  <span>MODEL: InfluenXers v1</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#2C8A52]" />
+                    <span>STATUS: READY</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className="mt-8 text-sm text-[#5f6368]">
-              © {new Date().getFullYear()} Influenxers. All rights reserved.
+          </section>
+        </div>
+
+        {/* 3. PAYING CUSTOMER TICKER */}
+        <PayingCustomerTicker />
+
+        <div className="mx-auto max-w-[1120px] px-6 md:px-10">
+          {/* 4. FEATURES */}
+          <section className="border-b border-[#1F1F1F] py-16 md:py-20">
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
+              Influence minds. Ship stories. Build conviction.
+            </h2>
+            <p className="mt-2 text-[#A3A3A3]">
+              A narrative system that turns clarity into weekly output.
             </p>
-          </div>
-        </footer>
-      </main>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: "Narrative OS",
+                  desc: "Clarifies what you stand for, what you avoid, and why you win — in one page.",
+                  includes: "Investor / Customer / Hiring",
+                },
+                {
+                  title: "Story Bank",
+                  desc: "Turns your founder journey, product pull, and customer proof into reusable story assets.",
+                  includes: "Founder / Product / Proof",
+                },
+                {
+                  title: "Weekly Output Engine",
+                  desc: "Generates posts and content that compound — not random posting.",
+                  includes: "Posts / Threads / Rich media",
+                },
+              ].map((card) => (
+                <div
+                  key={card.title}
+                  className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow"
+                >
+                  <h3 className="font-medium text-[#EDEDED]">{card.title}</h3>
+                  <p className="mt-3 text-sm text-[#A3A3A3] leading-relaxed">
+                    {card.desc}
+                  </p>
+                  <p className="mt-4 font-mono text-[10px] text-[#6B6B6B]">
+                    Includes: {card.includes}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 5. HOW IT WORKS */}
+          <section id="how-it-works" className="border-b border-[#1F1F1F] py-16 md:py-20">
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
+              How it works
+            </h2>
+            <div className="mt-12 space-y-10">
+              {[
+                {
+                  num: "01",
+                  title: "Mirror",
+                  desc: "We analyze what you're currently signaling and where it's unclear.",
+                  artifacts: "One-pager, Story Bank, Weekly Plan",
+                },
+                {
+                  num: "02",
+                  title: "Craft",
+                  desc: "We build your story assets: investor narrative, customer narrative, hiring narrative.",
+                  artifacts: "Narrative docs, Story Bank, Content calendar",
+                },
+                {
+                  num: "03",
+                  title: "Ship",
+                  desc: "We turn stories into weekly content: posts, threads, visuals, and rich media.",
+                  artifacts: "Weekly posts, Threads, Rich media",
+                },
+              ].map((step) => (
+                <div key={step.num} className="flex gap-6">
+                  <span className="shrink-0 rounded-full border border-[#1F1F1F] bg-[#0F0F0F] px-3 py-1 font-mono text-xs text-[#A3A3A3]">
+                    {step.num}
+                  </span>
+                  <div>
+                    <h3 className="font-medium text-[#EDEDED]">{step.title}</h3>
+                    <p className="mt-2 text-[#A3A3A3] leading-relaxed">
+                      {step.desc}
+                    </p>
+                    <p className="mt-2 font-mono text-[10px] text-[#6B6B6B]">
+                      Output artifacts: {step.artifacts}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 6. BUILT FOR */}
+          <section className="border-b border-[#1F1F1F] py-16 md:py-20">
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
+              Built for
+            </h2>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <h3 className="font-medium text-[#EDEDED]">Founders</h3>
+                <ul className="mt-4 space-y-2 text-sm text-[#A3A3A3]">
+                  <li>• Raise faster with clearer conviction</li>
+                  <li>• Win customers with stories that land</li>
+                  <li>• Recruit talent with a magnetic mission</li>
+                </ul>
+              </div>
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <h3 className="font-medium text-[#EDEDED]">Growth teams</h3>
+                <ul className="mt-4 space-y-2 text-sm text-[#A3A3A3]">
+                  <li>• Consistent narrative across channels</li>
+                  <li>• Faster content cycles</li>
+                  <li>• More output with the same headcount</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* 7. PRICING */}
+          <section id="pricing" className="border-b border-[#1F1F1F] py-16 md:py-20">
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
+              Pricing that scales with your ambition.
+            </h2>
+            <p className="mt-4 font-mono text-xs text-[#6B6B6B]">
+              Monthly • No hidden fees • Upgrade anytime
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  name: "Starter",
+                  price: "$20/mo",
+                  items: ["1 person", "Create posts + content"],
+                  cta: "Start Starter",
+                  highlight: false,
+                },
+                {
+                  name: "Rich",
+                  price: "$30/mo",
+                  items: ["Everything in Starter", "Video + rich content generation"],
+                  cta: "Go Rich",
+                  highlight: true,
+                },
+                {
+                  name: "Scale",
+                  price: "$60/mo",
+                  items: [
+                    "Up to 5× scaling (teams / more output)",
+                    "Priority workflows",
+                  ],
+                  cta: "Scale up",
+                  highlight: false,
+                },
+              ].map((plan) => (
+                <div
+                  key={plan.name}
+                  className={`card-hover rounded-[14px] border p-6 transition-shadow ${
+                    plan.highlight
+                      ? "border-[#1F1F1F] bg-[#0F0F0F]"
+                      : "border-[#1F1F1F] bg-[#0B0B0B]"
+                  }`}
+                >
+                  <h3 className="font-medium text-[#EDEDED]">{plan.name}</h3>
+                  <p className="mt-2 font-mono text-2xl text-[#EDEDED]">
+                    {plan.price}
+                  </p>
+                  <ul className="mt-4 space-y-2 text-sm text-[#A3A3A3]">
+                    {plan.items.map((item) => (
+                      <li key={item}>• {item}</li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/apply"
+                    className={`mt-6 block w-full rounded-[10px] py-3 text-center font-medium transition-all ${
+                      plan.highlight
+                        ? "bg-[#00FF84] text-[#050505] hover:-translate-y-0.5 hover:brightness-110"
+                        : "border border-[#1F1F1F] text-[#EDEDED] hover:bg-[#0F0F0F]"
+                    }`}
+                  >
+                    {plan.cta}
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 font-mono text-xs text-[#6B6B6B]">
+              Cancel anytime. Built for speed.
+            </p>
+          </section>
+
+          {/* 8. FOUNDERS */}
+          <section className="border-b border-[#1F1F1F] py-16 md:py-20">
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
+              Built by builders.
+            </h2>
+            <div className="mt-12 grid gap-8 md:grid-cols-2">
+              <div className="card-hover flex gap-6 rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#0F0F0F] font-mono text-sm text-[#A3A3A3]">
+                  HP
+                </div>
+                <div>
+                  <h3 className="font-medium text-[#EDEDED]">Harsh Pamnani</h3>
+                  <p className="mt-1 font-mono text-xs text-[#6B6B6B]">
+                    Brand builder. Author of multiple brand-building books.
+                  </p>
+                  <p className="mt-3 text-sm text-[#A3A3A3] leading-relaxed">
+                    Studied how founders and startups skyrocket their brands — and
+                    turned it into a system.
+                  </p>
+                </div>
+              </div>
+              <div className="card-hover flex gap-6 rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#0F0F0F] font-mono text-sm text-[#A3A3A3]">
+                  AL
+                </div>
+                <div>
+                  <h3 className="font-medium text-[#EDEDED]">Amritashwar Lal</h3>
+                  <p className="mt-1 font-mono text-xs text-[#6B6B6B]">
+                    Performance marketing product builder across Instagram,
+                    Tapestry, and Snap.
+                  </p>
+                  <p className="mt-3 text-sm text-[#A3A3A3] leading-relaxed">
+                    Built products that helped the world's best brands grow — now
+                    applying that playbook to founders.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 9. FINAL CTA */}
+          <section className="py-16 md:py-20">
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-4xl">
+              Make your startup inevitable.
+            </h2>
+            <p className="mt-4 text-[#A3A3A3]">
+              Start with your story. Ship weekly. Compound.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/apply"
+                className="rounded-[10px] bg-[#00FF84] px-6 py-3 font-medium text-[#050505] transition-all hover:-translate-y-0.5 hover:brightness-110"
+              >
+                Start writing
+              </Link>
+              <Link
+                href="#"
+                className="rounded-[10px] border border-[#1F1F1F] px-6 py-3 font-medium text-[#EDEDED] transition-all hover:-translate-y-0.5 hover:border-[#1F1F1F] hover:bg-[#0F0F0F]"
+              >
+                Talk to us
+              </Link>
+            </div>
+          </section>
+
+          {/* FOOTER */}
+          <footer className="border-t border-[#1F1F1F] py-8">
+            <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+              <p className="font-mono text-xs text-[#6B6B6B]">
+                © {new Date().getFullYear()} InfluenXers
+              </p>
+              <div className="flex gap-6">
+                <Link
+                  href="#"
+                  className="font-mono text-xs text-[#6B6B6B] hover:text-[#00FF84] transition-colors"
+                >
+                  Docs
+                </Link>
+                <Link
+                  href="#pricing"
+                  className="font-mono text-xs text-[#6B6B6B] hover:text-[#00FF84] transition-colors"
+                >
+                  Pricing
+                </Link>
+                <Link
+                  href="/apply"
+                  className="font-mono text-xs text-[#6B6B6B] hover:text-[#00FF84] transition-colors"
+                >
+                  Apply
+                </Link>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
     </div>
   );
 }
