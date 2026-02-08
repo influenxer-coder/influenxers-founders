@@ -5,11 +5,23 @@ import { useEffect, useState } from "react";
 
 function PayingCustomerTerminal() {
   const [count, setCount] = useState(10156);
+  const [reach, setReach] = useState(100000000);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prev) => (prev >= 10999 ? 10000 : prev + 1));
     }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setReach((prev) => {
+        const step = Math.random() > 0.5 ? 1 : -1;
+        const next = prev + step * Math.floor(Math.random() * 5000 + 1000);
+        return Math.max(99500000, Math.min(100500000, next));
+      });
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -24,8 +36,14 @@ function PayingCustomerTerminal() {
       {/* Content */}
       <div className="p-6 font-mono">
         <p className="text-xs text-[#6B6B6B]">monthly paying customers</p>
-        <p className="mt-4 tabular-nums text-3xl font-medium text-[#EDEDED] transition-all duration-300">
+        <p className="mt-2 tabular-nums text-3xl font-medium text-[#EDEDED] transition-all duration-300">
           {count.toLocaleString()}
+        </p>
+        <p className="mt-6 text-xs text-[#6B6B6B]">
+          influencing people across US via multiple channels
+        </p>
+        <p className="mt-1 tabular-nums text-2xl font-medium text-[#EDEDED] transition-all duration-300">
+          {reach.toLocaleString()}
         </p>
         <span className="mt-4 inline-block rounded border border-[#00FF84] px-2 py-0.5 text-xs text-[#00FF84]">
           LIVE
