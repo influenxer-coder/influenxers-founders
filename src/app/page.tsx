@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function PayingCustomerTerminal() {
-  const [count, setCount] = useState(10100);
+  const [count, setCount] = useState(10156);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prev) => (prev >= 10999 ? 10000 : prev + 1));
-    }, 900);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -24,7 +24,7 @@ function PayingCustomerTerminal() {
       {/* Content */}
       <div className="p-6 font-mono">
         <p className="text-xs text-[#6B6B6B]">monthly paying customers</p>
-        <p className="mt-4 tabular-nums text-3xl font-medium text-[#EDEDED]">
+        <p className="mt-4 tabular-nums text-3xl font-medium text-[#EDEDED] transition-all duration-300">
           {count.toLocaleString()}
         </p>
         <span className="mt-4 inline-block rounded border border-[#00FF84] px-2 py-0.5 text-xs text-[#00FF84]">
