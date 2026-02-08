@@ -35,7 +35,7 @@ function PayingCustomerTerminal() {
       </div>
       {/* Content */}
       <div className="p-6 font-mono">
-        <p className="text-xs text-[#6B6B6B]">monthly paying customers</p>
+        <p className="text-xs text-[#6B6B6B]">monthly active startups</p>
         <p className="mt-2 tabular-nums text-3xl font-medium text-[#EDEDED] transition-all duration-300">
           {count.toLocaleString()}
         </p>
