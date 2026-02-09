@@ -141,38 +141,6 @@ export default function Home() {
             <p className="mt-2 text-[#A3A3A3]">
               A narrative system that turns clarity into weekly output.
             </p>
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {[
-                {
-                  title: "Narrative OS",
-                  desc: "Clarifies what you stand for, what you avoid, and why you win — in one page.",
-                  includes: "Investor / Customer / Hiring",
-                },
-                {
-                  title: "Story Bank",
-                  desc: "Turns your founder journey, product pull, and customer proof into reusable story assets.",
-                  includes: "Founder / Product / Proof",
-                },
-                {
-                  title: "Weekly Output Engine",
-                  desc: "Generates posts and content that compound — not random posting.",
-                  includes: "Posts / Threads / Rich media",
-                },
-              ].map((card) => (
-                <div
-                  key={card.title}
-                  className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow"
-                >
-                  <h3 className="font-medium text-[#EDEDED]">{card.title}</h3>
-                  <p className="mt-3 text-sm text-[#A3A3A3] leading-relaxed">
-                    {card.desc}
-                  </p>
-                  <p className="mt-4 font-mono text-[10px] text-[#6B6B6B]">
-                    Includes: {card.includes}
-                  </p>
-                </div>
-              ))}
-            </div>
           </section>
 
           {/* 5. HOW IT WORKS */}
@@ -224,22 +192,24 @@ export default function Home() {
             <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
               Built for
             </h2>
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
               <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <h3 className="font-medium text-[#EDEDED]">Founders</h3>
-                <ul className="mt-4 space-y-2 text-sm text-[#A3A3A3]">
-                  <li>• Raise faster with clearer conviction</li>
-                  <li>• Win customers with stories that land</li>
-                  <li>• Recruit talent with a magnetic mission</li>
-                </ul>
+                <h3 className="font-medium text-[#EDEDED]">Attract more customers</h3>
+                <p className="mt-2 text-sm text-[#A3A3A3]">
+                  Get in front of B2B and D2C consumers with clear messaging.
+                </p>
               </div>
               <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <h3 className="font-medium text-[#EDEDED]">Growth teams</h3>
-                <ul className="mt-4 space-y-2 text-sm text-[#A3A3A3]">
-                  <li>• Consistent narrative across channels</li>
-                  <li>• Faster content cycles</li>
-                  <li>• More output with the same headcount</li>
-                </ul>
+                <h3 className="font-medium text-[#EDEDED]">Attract investors</h3>
+                <p className="mt-2 text-sm text-[#A3A3A3]">
+                  Tell your story with conviction. Make the opportunity obvious.
+                </p>
+              </div>
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <h3 className="font-medium text-[#EDEDED]">Attract employees</h3>
+                <p className="mt-2 text-sm text-[#A3A3A3]">
+                  Mission becomes a magnet. Recruit talent that fits.
+                </p>
               </div>
             </div>
           </section>
