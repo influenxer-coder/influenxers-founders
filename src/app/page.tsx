@@ -141,49 +141,63 @@ export default function Home() {
             <p className="mt-2 text-[#A3A3A3]">
               A narrative system that turns clarity into weekly output.
             </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <h3 className="font-medium text-[#EDEDED]">Attract customers</h3>
+              </div>
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <h3 className="font-medium text-[#EDEDED]">Attract investors</h3>
+              </div>
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <h3 className="font-medium text-[#EDEDED]">Attract employees</h3>
+              </div>
+            </div>
           </section>
 
-          {/* 5. HOW IT WORKS */}
+          {/* 5. WHAT YOU CAN DO */}
           <section id="how-it-works" className="border-b border-[#1F1F1F] py-16 md:py-20">
             <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
-              How it works
+              What you can do
             </h2>
-            <div className="mt-12 space-y-10">
-              {[
-                {
-                  num: "01",
-                  title: "Mirror",
-                  desc: "We analyze what you're currently signaling and where it's unclear.",
-                  artifacts: "One-pager, Story Bank, Weekly Plan",
-                },
-                {
-                  num: "02",
-                  title: "Craft",
-                  desc: "We build your story assets: investor narrative, customer narrative, hiring narrative.",
-                  artifacts: "Narrative docs, Story Bank, Content calendar",
-                },
-                {
-                  num: "03",
-                  title: "Ship",
-                  desc: "We turn stories into weekly content: posts, threads, visuals, and rich media.",
-                  artifacts: "Weekly posts, Threads, Rich media",
-                },
-              ].map((step) => (
-                <div key={step.num} className="flex gap-6">
-                  <span className="shrink-0 rounded-full border border-[#1F1F1F] bg-[#0F0F0F] px-3 py-1 font-mono text-xs text-[#A3A3A3]">
-                    {step.num}
-                  </span>
-                  <div>
-                    <h3 className="font-medium text-[#EDEDED]">{step.title}</h3>
-                    <p className="mt-2 text-[#A3A3A3] leading-relaxed">
-                      {step.desc}
-                    </p>
-                    <p className="mt-2 font-mono text-[10px] text-[#6B6B6B]">
-                      Output artifacts: {step.artifacts}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <p className="mt-2 text-[#A3A3A3]">
+              Pick a goal. We guide the work.
+            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <p className="font-mono text-[10px] text-[#6B6B6B]">LIST</p>
+                <h3 className="mt-2 font-medium text-[#EDEDED]">Build a target list</h3>
+                <p className="mt-2 text-sm text-[#A3A3A3]">
+                  Get a clean list of investors, customers, or hires.
+                </p>
+              </div>
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <p className="font-mono text-[10px] text-[#6B6B6B]">SEGMENT</p>
+                <h3 className="mt-2 font-medium text-[#EDEDED]">Segment list as favorable</h3>
+                <p className="mt-2 text-sm text-[#A3A3A3]">
+                  Split your list into 2–5 segments that matter.
+                </p>
+              </div>
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <p className="font-mono text-[10px] text-[#6B6B6B]">MOCROTARGETED MESSAGE</p>
+                <h3 className="mt-2 font-medium text-[#EDEDED]">Write message variants</h3>
+                <p className="mt-2 text-sm text-[#A3A3A3]">
+                  Generate 3–5 versions. You edit and send.
+                </p>
+              </div>
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <p className="font-mono text-[10px] text-[#6B6B6B]">SHADOW ADS</p>
+                <h3 className="mt-2 font-medium text-[#EDEDED]">Use our account to market</h3>
+                <p className="mt-2 text-sm text-[#A3A3A3]">
+                  Run on LinkedIn, email (your list), ads, or communities.
+                </p>
+              </div>
+              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
+                <p className="font-mono text-[10px] text-[#6B6B6B]">ITERATE</p>
+                <h3 className="mt-2 font-medium text-[#EDEDED]">Learn and repeat</h3>
+                <p className="mt-2 text-sm text-[#A3A3A3]">
+                  See what works. Scale winners next week.
+                </p>
+              </div>
             </div>
           </section>
 
