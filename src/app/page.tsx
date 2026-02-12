@@ -26,26 +26,26 @@ function PayingCustomerTerminal() {
   }, []);
 
   return (
-    <div className="overflow-hidden rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] shadow-none transition-shadow hover:shadow-[0_0_0_1px_rgba(0,255,132,0.2),0_0_30px_rgba(0,255,132,0.08)]">
+    <div className="overflow-hidden rounded-[14px] border border-[#2E1065] bg-[#120A24] shadow-none transition-shadow hover:shadow-[0_0_0_1px_rgba(34,211,238,0.22),0_0_30px_rgba(34,211,238,0.12)]">
       {/* Top bar */}
-      <div className="flex items-center gap-2 border-b border-[#1F1F1F] px-4 py-3">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#8A2C2C]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#8A7A2C]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#2C8A52]" />
+      <div className="flex items-center gap-2 border-b border-[#2E1065] px-4 py-3">
+        <span className="h-2.5 w-2.5 rounded-full bg-[#6D2C8A]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#2C6D8A]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#2C8A6D]" />
       </div>
       {/* Content */}
       <div className="p-6 font-mono">
-        <p className="text-xs text-[#6B6B6B]">monthly active startups</p>
+        <p className="text-xs text-[#9B8FB8]">monthly active startups</p>
         <p className="mt-2 tabular-nums text-3xl font-medium text-[#EDEDED] transition-all duration-300">
           {count.toLocaleString()}
         </p>
-        <p className="mt-6 text-xs text-[#6B6B6B]">
+        <p className="mt-6 text-xs text-[#9B8FB8]">
           influencing people across US via multiple channels
         </p>
         <p className="mt-1 tabular-nums text-2xl font-medium text-[#EDEDED] transition-all duration-300">
           {reach.toLocaleString()}
         </p>
-        <span className="mt-4 inline-block rounded border border-[#00FF84] px-2 py-0.5 text-xs text-[#00FF84]">
+        <span className="mt-4 inline-block rounded border border-[#22D3EE] px-2 py-0.5 text-xs text-[#22D3EE]">
           LIVE
         </span>
       </div>
@@ -55,11 +55,11 @@ function PayingCustomerTerminal() {
 
 export default function Home() {
   return (
-    <div className="page-grid min-h-screen bg-[#050505]">
+    <div className="page-grid min-h-screen bg-[#0B0616]">
       <div className="hero-vignette">
         <div className="mx-auto max-w-[1120px] px-6 md:px-10">
           {/* 1. TOP NAV */}
-          <nav className="sticky top-0 z-50 flex h-14 items-center justify-between border-b border-[#1F1F1F] bg-[#050505]/90 backdrop-blur-sm">
+          <nav className="sticky top-0 z-50 flex h-14 items-center justify-between border-b border-[#2E1065] bg-[#0B0616]/90 backdrop-blur-sm">
             <Link
               href="/"
               className="font-mono text-sm font-medium text-[#EDEDED]"
@@ -74,22 +74,22 @@ export default function Home() {
                 Docs
               </Link>
               <Link
-                href="#pricing"
-                className="font-mono text-sm text-[#A3A3A3] hover:text-[#00FF84] transition-colors"
+                href="#reduce-suite"
+                className="font-mono text-sm text-[#A3A3A3] hover:text-[#22D3EE] transition-colors"
               >
-                Pricing
+                Features
               </Link>
               <Link
                 href="#"
-                className="font-mono text-sm text-[#A3A3A3] hover:text-[#00FF84] transition-colors"
+                className="font-mono text-sm text-[#A3A3A3] hover:text-[#22D3EE] transition-colors"
               >
                 Login
               </Link>
               <Link
                 href="/apply"
-                className="rounded-[10px] border border-[#1F1F1F] px-4 py-2 font-mono text-sm text-[#EDEDED] hover:border-[#1F1F1F] hover:bg-[#0F0F0F] transition-colors"
+                className="rounded-[10px] border border-[#2E1065] px-4 py-2 font-mono text-sm text-[#EDEDED] hover:border-[#22D3EE] hover:bg-[#140C2B] transition-colors"
               >
-                Start influencing
+                Start for free
               </Link>
             </div>
           </nav>
@@ -98,33 +98,35 @@ export default function Home() {
           <section className="py-16 md:py-20">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div>
-                <div className="mb-6 inline-block rounded-full border border-[#1F1F1F] bg-[#0B0B0B] px-3 py-1 font-mono text-xs text-[#6B6B6B]">
-                  FOUNDERS • GROWTH • STORY OPS
+                <div className="mb-6 inline-block rounded-full border border-[#2E1065] bg-[#140C2B] px-3 py-1 font-mono text-xs text-[#9B8FB8]">
+                  THE AWE-INSPIRING HOOK
                 </div>
-                <h1 className="text-3xl font-medium leading-tight text-[#EDEDED] md:text-4xl">
-                  Turn your startup into an influencing machine.
+                <h1 className="text-3xl font-medium leading-tight text-[#EDEDED] md:text-5xl">
+                  Don't Just Build a Brand. Build an Influence.
                 </h1>
-                <p className="mt-6 text-[#A3A3A3] leading-relaxed">
-                  InfluenXers helps founders and growth teams craft stories that
-                  move customers and investors — then turns those stories into
-                  high-performing content, weekly.
+                <p className="mt-6 text-[#B7B0C8] leading-relaxed">
+                  Most pitches fail because they trigger Reactance - the natural
+                  "parking brake" that makes people push back when they feel
+                  pushed. InfluenXers is the AI catalyst that removes the
+                  barriers stopping investors, customers, and talent from
+                  choosing you.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link
                     href="/apply"
-                    className="rounded-[10px] bg-[#00FF84] px-6 py-3 font-medium text-[#050505] transition-all hover:-translate-y-0.5 hover:brightness-110"
+                    className="rounded-[10px] bg-[#22D3EE] px-6 py-3 font-medium text-[#0B0616] transition-all hover:-translate-y-0.5 hover:brightness-110"
                   >
-                    Start influencing
+                    Catalyze My Brand (Start for Free)
                   </Link>
                   <Link
-                    href="#how-it-works"
-                    className="rounded-[10px] border border-[#1F1F1F] px-6 py-3 font-medium text-[#EDEDED] transition-all hover:-translate-y-0.5 hover:border-[#1F1F1F] hover:bg-[#0F0F0F]"
+                    href="#parking-brake"
+                    className="rounded-[10px] border border-[#2E1065] px-6 py-3 font-medium text-[#EDEDED] transition-all hover:-translate-y-0.5 hover:border-[#22D3EE] hover:bg-[#140C2B]"
                   >
-                    See how it works
+                    See the brake
                   </Link>
                 </div>
-                <p className="mt-6 font-mono text-xs text-[#6B6B6B]">
-                  Built for founders. Used by growth teams.
+                <p className="mt-6 font-mono text-xs text-[#7C7395]">
+                  High-arousal, low-friction. Built for founders.
                 </p>
               </div>
               <PayingCustomerTerminal />
@@ -133,294 +135,178 @@ export default function Home() {
         </div>
 
         <div className="mx-auto max-w-[1120px] px-6 md:px-10">
+          {/* 3. THE PROBLEM */}
+          <section
+            id="parking-brake"
+            className="border-b border-[#2E1065] py-16 md:py-20"
+          >
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-4xl">
+              The "Parking Brake" Effect
+            </h2>
+            <div className="mt-10 grid gap-10 md:grid-cols-2">
+              <div className="rounded-[16px] border border-[#2E1065] bg-[#140C2B] p-6">
+                <p className="font-mono text-xs text-[#9B8FB8]">
+                  Why your current pitch is stuck in the Status Quo.
+                </p>
+                <p className="mt-4 text-[#B7B0C8] leading-relaxed">
+                  You have a great product, but your audience is clinging to what
+                  they know. This is Endowment Bias: people overvalue what they
+                  already have and fear the risk of change. To them, the
+                  "uncertainty tax" of a new brand feels too high.
+                </p>
+              </div>
+              <div className="rounded-[16px] border border-[#2E1065] bg-[#140C2B] p-6">
+                <p className="font-mono text-xs text-[#9B8FB8]">The Solution</p>
+                <p className="mt-4 text-[#B7B0C8] leading-relaxed">
+                  We don't just "write copy." We perform a Force Field Analysis
+                  to identify and remove the restraining forces holding your
+                  growth back.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* 4. FEATURES */}
-          <section className="border-b border-[#1F1F1F] py-16 md:py-20">
-            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
-              Influence minds. Ship stories. Build conviction.
-            </h2>
-            <p className="mt-2 text-[#A3A3A3]">
-              A narrative system that turns clarity into weekly output.
-            </p>
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <h3 className="font-medium text-[#EDEDED]">Attract customers</h3>
-              </div>
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <h3 className="font-medium text-[#EDEDED]">Attract investors</h3>
-              </div>
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <h3 className="font-medium text-[#EDEDED]">Attract employees</h3>
-              </div>
-            </div>
-          </section>
-
-          {/* 5. WHAT YOU CAN DO */}
-          <section id="how-it-works" className="border-b border-[#1F1F1F] py-16 md:py-20">
-            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
-              What you can do
-            </h2>
-            <p className="mt-2 text-[#A3A3A3]">
-              Pick a goal. We guide the work.
-            </p>
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <p className="font-mono text-[10px] text-[#6B6B6B]">LIST</p>
-                <h3 className="mt-2 font-medium text-[#EDEDED]">Build a target list</h3>
-                <p className="mt-2 text-sm text-[#A3A3A3]">
-                  Get a clean list of investors, customers, or hires.
-                </p>
-              </div>
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <p className="font-mono text-[10px] text-[#6B6B6B]">SEGMENT</p>
-                <h3 className="mt-2 font-medium text-[#EDEDED]">Segment list as favorable</h3>
-                <p className="mt-2 text-sm text-[#A3A3A3]">
-                  Split your list into 2–5 segments that matter.
-                </p>
-              </div>
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <p className="font-mono text-[10px] text-[#6B6B6B]">MOCROTARGETED MESSAGE</p>
-                <h3 className="mt-2 font-medium text-[#EDEDED]">Write message variants</h3>
-                <p className="mt-2 text-sm text-[#A3A3A3]">
-                  Generate 3–5 versions. You edit and send.
-                </p>
-              </div>
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <p className="font-mono text-[10px] text-[#6B6B6B]">SHADOW ADS</p>
-                <h3 className="mt-2 font-medium text-[#EDEDED]">Use our account to market</h3>
-                <p className="mt-2 text-sm text-[#A3A3A3]">
-                  Run on LinkedIn, email (your list), ads, or communities.
-                </p>
-              </div>
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <p className="font-mono text-[10px] text-[#6B6B6B]">ITERATE</p>
-                <h3 className="mt-2 font-medium text-[#EDEDED]">Learn and repeat</h3>
-                <p className="mt-2 text-sm text-[#A3A3A3]">
-                  See what works. Scale winners next week.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* 6. BUILT FOR */}
-          <section className="border-b border-[#1F1F1F] py-16 md:py-20">
-            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
-              Built for
+          <section
+            id="reduce-suite"
+            className="border-b border-[#2E1065] py-16 md:py-20"
+          >
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-4xl">
+              The "REDUCE" & "STEPPS" Suite
             </h2>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <h3 className="font-medium text-[#EDEDED]">Attract more customers</h3>
-                <p className="mt-2 text-sm text-[#A3A3A3]">
-                  Get in front of B2B and D2C consumers with clear messaging.
+              <div className="card-hover rounded-[16px] border border-[#2E1065] bg-[#120A24] p-6 transition-shadow">
+                <p className="font-mono text-xs text-[#9B8FB8]">
+                  For Investors (Overcoming Endowment)
+                </p>
+                <h3 className="mt-3 text-lg font-medium text-[#EDEDED]">
+                  The Cost of Inaction Generator
+                </h3>
+                <p className="mt-3 text-sm text-[#B7B0C8]">
+                  We help you show VCs exactly what they lose by staying with the
+                  status quo. Because losses loom larger than gains, making
+                  "doing nothing" feel expensive is the fastest way to move the
+                  needle.
                 </p>
               </div>
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <h3 className="font-medium text-[#EDEDED]">Attract investors</h3>
-                <p className="mt-2 text-sm text-[#A3A3A3]">
-                  Tell your story with conviction. Make the opportunity obvious.
+              <div className="card-hover rounded-[16px] border border-[#2E1065] bg-[#120A24] p-6 transition-shadow">
+                <p className="font-mono text-xs text-[#9B8FB8]">
+                  For Customers (Enhancing Trialability)
+                </p>
+                <h3 className="mt-3 text-lg font-medium text-[#EDEDED]">
+                  The Trialability Architect
+                </h3>
+                <p className="mt-3 text-sm text-[#B7B0C8]">
+                  We design "low-bar" entry points for your product. Innovations
+                  that are easier to try are more likely to be bought. We turn
+                  high-stakes purchases into simple, reversible trials.
                 </p>
               </div>
-              <div className="card-hover rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <h3 className="font-medium text-[#EDEDED]">Attract employees</h3>
-                <p className="mt-2 text-sm text-[#A3A3A3]">
-                  Mission becomes a magnet. Recruit talent that fits.
+              <div className="card-hover rounded-[16px] border border-[#2E1065] bg-[#120A24] p-6 transition-shadow">
+                <p className="font-mono text-xs text-[#9B8FB8]">
+                  For Employees (Evoking Awe & Stories)
+                </p>
+                <h3 className="mt-3 text-lg font-medium text-[#EDEDED]">
+                  Trojan Horse Narrative Builder
+                </h3>
+                <p className="mt-3 text-sm text-[#B7B0C8]">
+                  Don't just list benefits; tell a story. Stories are vessels for
+                  information that are harder to dispute than facts. We embed
+                  your mission in high-arousal narratives that evoke Awe, driving
+                  top talent to share your vision.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* 7. PRICING */}
-          <section id="pricing" className="border-b border-[#1F1F1F] py-16 md:py-20">
-            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
-              Pricing that scales with your ambition.
+          {/* 5. SOCIAL PROOF */}
+          <section
+            id="social-proof"
+            className="border-b border-[#2E1065] py-16 md:py-20"
+          >
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-4xl">
+              Built to Show. Built to Grow.
             </h2>
-            <p className="mt-4 font-mono text-xs text-[#6B6B6B]">
-              Monthly • No hidden fees • Upgrade anytime
+            <p className="mt-4 text-[#B7B0C8]">
+              See the Corroborating Evidence from founders who stopped "pushing"
+              and started catalyzing.
             </p>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                {
-                  name: "Starter",
-                  price: "$20/mo",
-                  items: ["1 person", "Create posts + content"],
-                  cta: "Start Starter",
-                  highlight: false,
-                },
-                {
-                  name: "Rich",
-                  price: "$30/mo",
-                  items: ["Everything in Starter", "Video + rich content generation"],
-                  cta: "Go Rich",
-                  highlight: true,
-                },
-                {
-                  name: "Scale",
-                  price: "$60/mo",
-                  items: [
-                    "Up to 5× scaling (teams / more output)",
-                    "Priority workflows",
-                  ],
-                  cta: "Scale up",
-                  highlight: false,
-                },
-              ].map((plan) => (
+                "Series A Raised",
+                "Enterprise Win",
+                "Top 10 Launch",
+                "Global Partners",
+                "Major Press",
+                "Pipeline Doubled",
+                "Hiring Surge",
+                "Revenue Spike",
+              ].map((label) => (
                 <div
-                  key={plan.name}
-                  className={`card-hover rounded-[14px] border p-6 transition-shadow ${
-                    plan.highlight
-                      ? "border-[#1F1F1F] bg-[#0F0F0F]"
-                      : "border-[#1F1F1F] bg-[#0B0B0B]"
-                  }`}
+                  key={label}
+                  className="rounded-[14px] border border-[#2E1065] bg-[#140C2B] px-4 py-6 text-center font-mono text-xs text-[#9B8FB8]"
                 >
-                  <h3 className="font-medium text-[#EDEDED]">{plan.name}</h3>
-                  <p className="mt-2 font-mono text-2xl text-[#EDEDED]">
-                    {plan.price}
-                  </p>
-                  <ul className="mt-4 space-y-2 text-sm text-[#A3A3A3]">
-                    {plan.items.map((item) => (
-                      <li key={item}>• {item}</li>
-                    ))}
-                  </ul>
-                  <Link
-                    href="/apply"
-                    className={`mt-6 block w-full rounded-[10px] py-3 text-center font-medium transition-all ${
-                      plan.highlight
-                        ? "bg-[#00FF84] text-[#050505] hover:-translate-y-0.5 hover:brightness-110"
-                        : "border border-[#1F1F1F] text-[#EDEDED] hover:bg-[#0F0F0F]"
-                    }`}
-                  >
-                    {plan.cta}
-                  </Link>
+                  {label}
                 </div>
               ))}
             </div>
-            <p className="mt-8 font-mono text-xs text-[#6B6B6B]">
-              Cancel anytime. Built for speed.
+          </section>
+
+          {/* 6. WHY US */}
+          <section className="border-b border-[#2E1065] py-16 md:py-20">
+            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-4xl">
+              Minter of Social Currency
+            </h2>
+            <p className="mt-4 text-[#B7B0C8] leading-relaxed">
+              InfluenXers doesn't just make you look good; it makes your audience
+              look smart for choosing you. By leveraging Scarcity and
+              Exclusivity, we help you frame your brand as an insider discovery,
+              giving your supporters the Social Currency they crave.
             </p>
           </section>
 
-          {/* 8. FOUNDERS */}
-          <section className="border-b border-[#1F1F1F] py-16 md:py-20">
-            <h2 className="text-2xl font-medium text-[#EDEDED] md:text-3xl">
-              Built by builders.
-            </h2>
-            <div className="mt-12 grid gap-8 md:grid-cols-2">
-              <div className="card-hover flex gap-6 rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <a
-                  href="https://www.linkedin.com/in/harshpamnani/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0"
-                >
-                  <img
-                    src="https://ui-avatars.com/api/?name=Harsh+Pamnani&size=112&background=0F0F0F&color=A3A3A3"
-                    alt="Harsh Pamnani"
-                    className="h-14 w-14 rounded-full border border-[#1F1F1F] object-cover"
-                  />
-                </a>
-                <div>
-                  <h3 className="font-medium text-[#EDEDED]">Harsh Pamnani</h3>
-                  <p className="mt-1 font-mono text-xs text-[#6B6B6B]">
-                    Marketing Head at T-Hub. Best-selling author of 4 books on
-                    branding. 100+ articles in Forbes, ET, FE. 7x TEDx speaker.
-                    Visiting Faculty at IIMs & MICA. MBA from XLRI.
-                  </p>
-                  <p className="mt-3 text-sm text-[#A3A3A3] leading-relaxed">
-                    Marketer with deep experience crafting brand narratives that
-                    build trust. Studied how founders skyrocket their brands — and
-                    turned it into a system.
-                  </p>
-                  <a
-                    href="https://www.linkedin.com/in/harshpamnani/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-block font-mono text-xs text-[#00FF84] hover:underline"
-                  >
-                    LinkedIn →
-                  </a>
-                </div>
-              </div>
-              <div className="card-hover flex gap-6 rounded-[14px] border border-[#1F1F1F] bg-[#0B0B0B] p-6 transition-shadow">
-                <a
-                  href="https://www.linkedin.com/in/amritashwar/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0"
-                >
-                  <img
-                    src="https://ui-avatars.com/api/?name=Amritashwar+Lal&size=112&background=0F0F0F&color=A3A3A3"
-                    alt="Amritashwar Lal"
-                    className="h-14 w-14 rounded-full border border-[#1F1F1F] object-cover"
-                  />
-                </a>
-                <div>
-                  <h3 className="font-medium text-[#EDEDED]">Amritashwar Lal</h3>
-                  <p className="mt-1 font-mono text-xs text-[#6B6B6B]">
-                    Product Lead @ Snapchat Brand & AR Ads. Ex-Instagram Reels
-                    Monetization. Ex-Tapestry AI, Apple Maps, Yahoo. CMU Tepper MBA.
-                  </p>
-                  <p className="mt-3 text-sm text-[#A3A3A3] leading-relaxed">
-                    Built Instagram Reels advertising and products for Fortune 500
-                    brands. Now applying that playbook to help founders grow.
-                  </p>
-                  <a
-                    href="https://www.linkedin.com/in/amritashwar/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-block font-mono text-xs text-[#00FF84] hover:underline"
-                  >
-                    LinkedIn →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* 9. FINAL CTA */}
+          {/* 7. FINAL CTA */}
           <section className="py-16 md:py-20">
             <h2 className="text-2xl font-medium text-[#EDEDED] md:text-4xl">
-              Make your startup inevitable.
+              Eliminate the Fallback Options of the Status Quo.
             </h2>
-            <p className="mt-4 text-[#A3A3A3]">
-              Start with your story. Ship weekly. Compound.
+            <p className="mt-4 text-[#B7B0C8] leading-relaxed">
+              The most successful leaders "Burn the Ships" to ensure there is no
+              retreat to the old way of doing things. It's time to commit to
+              your influence.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/apply"
-                className="rounded-[10px] bg-[#00FF84] px-6 py-3 font-medium text-[#050505] transition-all hover:-translate-y-0.5 hover:brightness-110"
+                className="rounded-[10px] bg-[#22D3EE] px-6 py-3 font-medium text-[#0B0616] transition-all hover:-translate-y-0.5 hover:brightness-110"
               >
-                Start influencing
-              </Link>
-              <Link
-                href="#"
-                className="rounded-[10px] border border-[#1F1F1F] px-6 py-3 font-medium text-[#EDEDED] transition-all hover:-translate-y-0.5 hover:border-[#1F1F1F] hover:bg-[#0F0F0F]"
-              >
-                Talk to us
+                Start Your First Catalyst Session
               </Link>
             </div>
           </section>
 
           {/* FOOTER */}
-          <footer className="border-t border-[#1F1F1F] py-8">
+          <footer className="border-t border-[#2E1065] py-8">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-              <p className="font-mono text-xs text-[#6B6B6B]">
+              <p className="font-mono text-xs text-[#7C7395]">
                 © {new Date().getFullYear()} InfluenXers
               </p>
               <div className="flex gap-6">
                 <Link
                   href="#"
-                  className="font-mono text-xs text-[#6B6B6B] hover:text-[#00FF84] transition-colors"
+                  className="font-mono text-xs text-[#7C7395] hover:text-[#22D3EE] transition-colors"
                 >
                   Docs
                 </Link>
                 <Link
-                  href="#pricing"
-                  className="font-mono text-xs text-[#6B6B6B] hover:text-[#00FF84] transition-colors"
+                  href="#reduce-suite"
+                  className="font-mono text-xs text-[#7C7395] hover:text-[#22D3EE] transition-colors"
                 >
-                  Pricing
+                  Features
                 </Link>
                 <Link
                   href="/apply"
-                  className="font-mono text-xs text-[#6B6B6B] hover:text-[#00FF84] transition-colors"
+                  className="font-mono text-xs text-[#7C7395] hover:text-[#22D3EE] transition-colors"
                 >
                   Apply
                 </Link>
